@@ -2,7 +2,8 @@ package com.neuedu.his.repository;
 
 import com.neuedu.his.dto.DoctorWorkloadDTO;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.Repository;
+import org.springframework.data.repository.Repository; // ✅ 这是接口
+import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -19,5 +20,5 @@ public interface DoctorStatisticsRepository extends Repository<Object, Long> {
             "LEFT JOIN Charge ch ON r.id = ch.registerId " +
             "WHERE r.visitDate BETWEEN :start AND :end " +
             "GROUP BY u.realName")
-    List<DoctorWorkloadDTO> getDoctorWorkload(LocalDate start, LocalDate end);
+    List<DoctorWorkloadDTO> getDoctorWorkload(@Param("start") LocalDate start, @Param("end") LocalDate end);
 }

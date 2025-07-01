@@ -1,39 +1,40 @@
 package com.neuedu.his.dto;
 
 public class DoctorWorkloadDTO {
-    private String doctorName;
-    private Long registerCount;
-    private Long prescriptionCount;
-    private Double drugTotal;
-    private Long chargeCount;
-    private Double totalAmount;
 
-    public DoctorWorkloadDTO(String doctorName, Long registerCount, Long prescriptionCount,
-                             Double drugTotal, Long chargeCount, Double totalAmount) {
-        this.doctorName = doctorName;
-        this.registerCount = registerCount;
+    private String realName;
+    private Long regCount;
+    private Long prescriptionCount;
+    private Long totalDrugCost;
+    private Long chargeCount;
+    private Double totalChargeAmount;
+
+    public DoctorWorkloadDTO(String realName, Long regCount, Long prescriptionCount,
+                             Long totalDrugCost, Long chargeCount, Double totalChargeAmount) {
+        this.realName = realName;
+        this.regCount = regCount;
         this.prescriptionCount = prescriptionCount;
-        this.drugTotal = drugTotal;
+        this.totalDrugCost = totalDrugCost;
         this.chargeCount = chargeCount;
-        this.totalAmount = totalAmount;
+        this.totalChargeAmount = totalChargeAmount;
     }
 
-    // Getters and Setters
-    public String getDoctorName() { return doctorName; }
-    public void setDoctorName(String doctorName) { this.doctorName = doctorName; }
+    // getter 和 setter 方法
+    public String getRealName() { return realName; }
+    public void setRealName(String realName) { this.realName = realName; }
 
-    public Long getRegisterCount() { return registerCount; }
-    public void setRegisterCount(Long registerCount) { this.registerCount = registerCount; }
+    public Long getRegCount() { return regCount; }
+    public void setRegCount(Long regCount) { this.regCount = regCount; }
 
     public Long getPrescriptionCount() { return prescriptionCount; }
     public void setPrescriptionCount(Long prescriptionCount) { this.prescriptionCount = prescriptionCount; }
 
-    public Double getDrugTotal() { return drugTotal; }
-    public void setDrugTotal(Double drugTotal) { this.drugTotal = drugTotal; }
+    public Long getTotalDrugCost() { return totalDrugCost; }
+    public void setTotalDrugCost(Long totalDrugCost) { this.totalDrugCost = totalDrugCost; }
 
     public Long getChargeCount() { return chargeCount; }
     public void setChargeCount(Long chargeCount) { this.chargeCount = chargeCount; }
 
-    public Double getTotalAmount() { return totalAmount; }
-    public void setTotalAmount(Double totalAmount) { this.totalAmount = totalAmount; }
+    public Double getTotalChargeAmount() { return totalChargeAmount; }
+    public void setTotalChargeAmount(Double totalChargeAmount) { this.totalChargeAmount = totalChargeAmount; }
 }
