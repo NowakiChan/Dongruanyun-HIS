@@ -1,0 +1,48 @@
+.LoginMainBox{
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-40%);
+    width: 35vh;
+    height: 33vh;
+    border: 1px solid lightgray;
+    /* border-radius: 1vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2vh;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 2px 2px 1px rgba(0,0,0,0.3);
+    margin: 0 0;
+}
+
+.LoginMainBox h1{
+    font-size: 25px;
+    font-weight: 400;
+    margin: 0 0;
+    letter-spacing: 2px;
+    /* position: absolute; */
+    /* top: 1vh; */
+}
+
+.HintBox{
+    height: 3vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.HintText{
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: gray;
+    margin: 0 0;
+    cursor: pointer;
+}
+
+.HintText:hover{
+    color: #0D5EA6;
+    text-decoration: underline;
+}
