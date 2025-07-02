@@ -3,13 +3,15 @@ import Button from "@mui/material/Button";
 import '../css/login.css'
 import Snackbar from "@mui/material/Snackbar";
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function Login()
 {
     const [box_state,setBoxState] = useState(false);
     const [hint_text,setHintText] = useState('');
     const [usrname,setUsrname] = useState('');
-    const [pwd,setPwd] = useState(''); 
+    const [pwd,setPwd] = useState('');
+    const main_page_navigate = useNavigate();
 
     const getUsrname = (e) => { setUsrname(e.target.value); }
     const getPwd = (e) => { setPwd(e.target.value); }
@@ -32,7 +34,7 @@ export function Login()
     const handleSubmit = () => {
         const url = 'http://localhost:8080/login';
         if(checkAspect()){
-            
+            main_page_navigate('/home');
             // fetch(url).then(info => {
             //     console.log(info);
             // }).then(data => {
