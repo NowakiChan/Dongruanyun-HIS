@@ -18,7 +18,6 @@ public class DrugReturnDTO {
         this.amount = amount;
         this.drugsPrice = drugsPrice;
     }
-
     // Getter & Setter
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
