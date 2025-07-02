@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.his.mapper.RegistlevelMapper">
+
+    <resultMap id="BaseResultMap" type="com.neuedu.his.po.Registlevel">
+            <id property="id" column="ID" />
+            <result property="registcode" column="RegistCode" />
+            <result property="registname" column="RegistName" />
+            <result property="sequenceno" column="SequenceNo" />
+            <result property="registfee" column="RegistFee" />
+            <result property="registquota" column="RegistQuota" />
+            <result property="delmark" column="DelMark" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,RegistCode,RegistName,SequenceNo,RegistFee,RegistQuota,
+        DelMark
+    </sql>
+</mapper>

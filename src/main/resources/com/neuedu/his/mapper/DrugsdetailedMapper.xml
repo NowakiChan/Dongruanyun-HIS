@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.his.mapper.DrugsdetailedMapper">
+
+    <resultMap id="BaseResultMap" type="com.neuedu.his.po.Drugsdetailed">
+            <id property="id" column="ID" />
+            <result property="drugstempid" column="DrugsTempID" />
+            <result property="drugsid" column="DrugsID" />
+            <result property="drugsusage" column="DrugsUsage" />
+            <result property="dosage" column="Dosage" />
+            <result property="frequency" column="Frequency" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,DrugsTempID,DrugsID,DrugsUsage,Dosage,Frequency
+    </sql>
+</mapper>
