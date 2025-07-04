@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.his.mapper.PatientcostsMapper">
+
+    <resultMap id="BaseResultMap" type="com.neuedu.his.po.Patientcosts">
+            <id property="id" column="ID" />
+            <result property="registid" column="RegistID" />
+            <result property="invoiceid" column="InvoiceID" />
+            <result property="itemid" column="ItemID" />
+            <result property="itemtype" column="ItemType" />
+            <result property="name" column="Name" />
+            <result property="price" column="Price" />
+            <result property="amount" column="Amount" />
+            <result property="deptid" column="DeptID" />
+            <result property="createtime" column="Createtime" />
+            <result property="createoperid" column="CreateOperID" />
+            <result property="paytime" column="PayTime" />
+            <result property="registerid" column="RegisterID" />
+            <result property="feetype" column="FeeType" />
+            <result property="backid" column="BackID" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,RegistID,InvoiceID,ItemID,ItemType,Name,
+        Price,Amount,DeptID,Createtime,CreateOperID,
+        PayTime,RegisterID,FeeType,BackID
+    </sql>
+</mapper>

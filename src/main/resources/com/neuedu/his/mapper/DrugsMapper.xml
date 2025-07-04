@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.his.mapper.DrugsMapper">
+
+    <resultMap id="BaseResultMap" type="com.neuedu.his.po.Drugs">
+            <id property="id" column="ID" />
+            <result property="drugscode" column="DrugsCode" />
+            <result property="drugsname" column="DrugsName" />
+            <result property="drugsformat" column="DrugsFormat" />
+            <result property="drugsunit" column="DrugsUnit" />
+            <result property="manufacturer" column="Manufacturer" />
+            <result property="drugsdosageid" column="DrugsDosageID" />
+            <result property="drugstypeid" column="DrugsTypeID" />
+            <result property="drugsprice" column="DrugsPrice" />
+            <result property="mnemoniccode" column="MnemonicCode" />
+            <result property="creationdate" column="CreationDate" />
+            <result property="lastupdatedate" column="LastUpdateDate" />
+            <result property="delmark" column="DelMark" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,DrugsCode,DrugsName,DrugsFormat,DrugsUnit,Manufacturer,
+        DrugsDosageID,DrugsTypeID,DrugsPrice,MnemonicCode,CreationDate,
+        LastUpdateDate,DelMark
+    </sql>
+</mapper>
