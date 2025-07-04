@@ -1,4 +1,4 @@
-package com.neuedu.his.entity;
+/*package com.neuedu.his.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
@@ -44,3 +44,4 @@ public class DailySettle {
     public String getRemark() { return remark; }
     public void setRemark(String remark) { this.remark = remark; }
 }
+*/

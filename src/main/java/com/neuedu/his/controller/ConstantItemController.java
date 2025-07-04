@@ -6,16 +6,13 @@ import com.neuedu.his.po.Constantitem;
 import com.neuedu.his.po.User;
 import com.neuedu.his.service.ConstantitemService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/constantitem")
+@RequestMapping("/ConstantItem")
 public class ConstantItemController {
 
     @Autowired
@@ -34,11 +31,32 @@ public class ConstantItemController {
         return service.list(queryWrapper);
     }
 
+    @RequestMapping("/delete/{id}")
+    public Boolean delete(@PathVariable String id){
+        return service.removeById(id);
+    }
+
+    @RequestMapping("/add")
+    public Boolean add(@RequestBody Constantitem type){
+        return service.save(type);
+    }
+
     @RequestMapping("/getbytypeid2")
     public List<Constantitem> getbytypeid2(@RequestParam Integer id){
         System.out.println("getbytypeid2   id="+id);
         QueryWrapper<Constantitem> qw = new QueryWrapper<>();
         qw.eq("constanttypeid",id);
         return service.list(qw);
+    }
+
+    @PostMapping("/update")
+    public boolean update(@RequestBody Constantitem constantitem) {
+
+        if (constantitem.getId() == null) {
+            System.err.println("【更新失败】ID不能为空");
+            return false;
+        }
+
+        return service.updateById(constantitem);
     }
 }
