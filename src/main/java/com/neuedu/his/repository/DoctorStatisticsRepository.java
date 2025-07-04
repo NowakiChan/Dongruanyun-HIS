@@ -8,7 +8,6 @@ import java.util.Date;
 import java.util.List;
 
 public interface DoctorStatisticsRepository extends Repository<com.neuedu.his.entity.Register, Long> {
-
     @Query(value = """
         SELECT 
             u.id AS doctorId,

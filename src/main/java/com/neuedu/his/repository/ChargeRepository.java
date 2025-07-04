@@ -11,7 +11,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface ChargeRepository extends Repository<Charge, Long> {
-
     @Query(value = """
         SELECT 
             c.CreateOperID AS userId,

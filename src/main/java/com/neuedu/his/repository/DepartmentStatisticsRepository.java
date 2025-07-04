@@ -11,7 +11,6 @@ import java.util.List;
 
 @Repository
 public interface DepartmentStatisticsRepository extends JpaRepository<Charge, Integer> {
-
     @Query(value = """
         SELECT 
             d.DeptName AS departmentName,

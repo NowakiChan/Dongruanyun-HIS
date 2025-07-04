@@ -7,6 +7,5 @@ import java.util.List;
 
 public interface PrescriptionItemRepository extends JpaRepository<PrescriptionItem, Long> {
     List<PrescriptionItem> findByPrescriptionId(Integer prescription_id);
-
     List<PrescriptionItem> findByState(String state);
 }

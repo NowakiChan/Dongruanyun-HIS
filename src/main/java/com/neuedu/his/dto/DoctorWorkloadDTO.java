@@ -21,51 +21,16 @@ public class DoctorWorkloadDTO implements Serializable {
         this.totalAmount = totalAmount;
     }
 
-    public Long getDoctorId() {
-        return doctorId;
-    }
-
-    public void setDoctorId(Long doctorId) {
-        this.doctorId = doctorId;
-    }
-
-    public String getDoctorName() {
-        return doctorName;
-    }
-
-    public void setDoctorName(String doctorName) {
-        this.doctorName = doctorName;
-    }
-
-    public Date getChargeDate() {
-        return chargeDate;
-    }
-
-    public void setChargeDate(Date chargeDate) {
-        this.chargeDate = chargeDate;
-    }
-
-    public Long getVisitCount() {
-        return visitCount;
-    }
-
-    public void setVisitCount(Long visitCount) {
-        this.visitCount = visitCount;
-    }
-
-    public Long getChargeCount() {
-        return chargeCount;
-    }
-
-    public void setChargeCount(Long chargeCount) {
-        this.chargeCount = chargeCount;
-    }
-
-    public Double getTotalAmount() {
-        return totalAmount;
-    }
-
-    public void setTotalAmount(Double totalAmount) {
-        this.totalAmount = totalAmount;
-    }
+    public Long getDoctorId() {return doctorId;}
+    public void setDoctorId(Long doctorId) {this.doctorId = doctorId;}
+    public String getDoctorName() {return doctorName;}
+    public void setDoctorName(String doctorName) {this.doctorName = doctorName;}
+    public Date getChargeDate() {return chargeDate;}
+    public void setChargeDate(Date chargeDate) {this.chargeDate = chargeDate;}
+    public Long getVisitCount() {return visitCount;}
+    public void setVisitCount(Long visitCount) {this.visitCount = visitCount;}
+    public Long getChargeCount() {return chargeCount;}
+    public void setChargeCount(Long chargeCount) {this.chargeCount = chargeCount;}
+    public Double getTotalAmount() {return totalAmount;}
+    public void setTotalAmount(Double totalAmount) {this.totalAmount = totalAmount;}
 }

@@ -24,7 +24,8 @@ public class ChargeController {
 
     @GetMapping("/daily-summary")
     public List<DailyChargeSummaryDTO> getDailySummary(
-            @RequestParam("date") @DateTimeFormat(pattern = "yyyy-MM-dd") Date date) {
+            @RequestParam("date") @DateTimeFormat(pattern = "yyyy-MM-dd") Date date)
+    {
         return chargeService.getDailySummary(date);
     }
 }

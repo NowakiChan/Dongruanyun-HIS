@@ -15,7 +15,6 @@ public class DepartmentWorkloadDTO implements Serializable {
         this.totalAmount = totalAmount;
     }
 
-    // Getters and setters
     public String getDepartmentName() { return departmentName; }
     public void setDepartmentName(String departmentName) { this.departmentName = departmentName; }
     public Long getVisitCount() { return visitCount; }
