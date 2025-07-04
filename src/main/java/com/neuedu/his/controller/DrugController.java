@@ -1,42 +1,47 @@
 package com.neuedu.his.controller;
 
-import com.neuedu.his.dto.DrugDispenseDTO;
-import com.neuedu.his.dto.DrugIssueRequest;
-import com.neuedu.his.dto.DrugReturnDTO;
-import com.neuedu.his.dto.DrugReturnRequest;
+import com.neuedu.his.entity.Drug;
 import com.neuedu.his.service.DrugService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import org.springframework.data.domain.Page;
 
+import java.util.Optional;
+
+@Tag(name = "药品管理")
 @RestController
-@RequestMapping("/api/drug")
+@RequestMapping("/api/drugs")
 public class DrugController {
 
-    @Autowired
+    @Resource
     private DrugService drugService;
 
-    @GetMapping("/unissued")
-    public ResponseEntity<List<DrugDispenseDTO>> getUnissuedDrugs(@RequestParam Integer medicalId) {
-        return ResponseEntity.ok(drugService.findUnissuedByMedicalId(medicalId));
-    }
-    @PostMapping("/issue")
-    public ResponseEntity<String> issueDrugs(@RequestBody DrugIssueRequest request) {
-        drugService.issueDrugs(request);
-        return ResponseEntity.ok("发药成功");
+    @Operation(summary = "分页搜索药品（按名称或拼音码）")
+    @GetMapping
+    public Page<Drug> searchDrugs(@RequestParam(defaultValue = "") String keyword,
+                                  @RequestParam(defaultValue = "0") int page,
+                                  @RequestParam(defaultValue = "10") int size) {
+        return drugService.searchDrugs(keyword, page, size);
     }
 
-    @GetMapping("/issued")
-    public ResponseEntity<List<DrugReturnDTO>> getIssuedDrugs(@RequestParam Integer medicalId) {
-        return ResponseEntity.ok(drugService.findIssuedByMedicalId(medicalId));
-    }
-    @PostMapping("/return")
-    public ResponseEntity<String> returnDrugs(@RequestBody DrugReturnRequest request) {
-        drugService.returnDrugs(request);
-        return ResponseEntity.ok("退药成功");
+    @Operation(summary = "新增或更新药品")
+    @PostMapping
+    public Drug saveDrug(@RequestBody Drug drug) {
+        return drugService.saveDrug(drug);
     }
 
+    @Operation(summary = "根据ID查询药品")
+    @GetMapping("/{id}")
+    public Optional<Drug> getDrug(@PathVariable Long id) {
+        return drugService.getDrugById(id);
+    }
+
+    @Operation(summary = "根据ID删除药品")
+    @DeleteMapping("/{id}")
+    public void deleteDrug(@PathVariable Long id) {
+        drugService.deleteDrug(id);
+    }
 }
-

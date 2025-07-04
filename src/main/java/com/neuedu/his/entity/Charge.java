@@ -1,25 +1,31 @@
 package com.neuedu.his.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "Charge")
+@Table(name = "patientcosts")
+@Data
 public class Charge {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    private Integer registerId;
+    @Column(name = "RegistID")
+    private Integer registId;
+
+    @Column(name = "CreateOperID")
+    private Integer userId;
+
+    @Column(name = "PayTime")
+    private LocalDateTime chargeTime;
+
+    @Column(name = "Price")
     private Double totalAmount;
 
-    // getter/setter
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public Integer getRegisterId() { return registerId; }
-    public void setRegisterId(Integer registerId) { this.registerId = registerId; }
-
-    public Double getTotalAmount() { return totalAmount; }
-    public void setTotalAmount(Double totalAmount) { this.totalAmount = totalAmount; }
+    @Column(name = "FeeType")
+    private String payType; // 如：现金、医保、银行卡等
 }

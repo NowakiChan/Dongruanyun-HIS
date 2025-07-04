@@ -1,30 +1,46 @@
 package com.neuedu.his.entity;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
+import lombok.Data;
+
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "Register")
+@Table(name = "register")
+@Data
 public class Register {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer userId;      // 医生ID
-    private Integer deptId;      // 科室ID
-    private LocalDate visitDate; // 就诊日期
+    @Column(name = "RegisterID", unique = true, nullable = false, length = 64)
+    private String registerNo; // 挂号编号
 
-    // getter/setter
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    @Column(name = "RealName", nullable = false, length = 64)
+    private String patientName;
 
-    public Integer getUserId() { return userId; }
-    public void setUserId(Integer userId) { this.userId = userId; }
+    @Column(name = "gender", length = 8)
+    private String gender;
 
-    public Integer getDeptId() { return deptId; }
-    public void setDeptId(Integer deptId) { this.deptId = deptId; }
+    @Column(name = "age")
+    private Integer age;
 
-    public LocalDate getVisitDate() { return visitDate; }
-    public void setVisitDate(LocalDate visitDate) { this.visitDate = visitDate; }
+    @Column(name = "HomeAddress", length = 32)
+    private String HomeAddress;
+
+    @Column(name = "DeptID", length = 64)
+    private String department;
+
+    @Column(name = "UserID", length = 64)
+    private String doctor;
+
+    @Column(name = "RegistTime")
+    private LocalDateTime registerTime;
+
+    @Column(name = "registLeID", length = 32)
+    private String registerType; // 普通/专家/急诊
+
+    @Column(name = "VisitState", length = 16)
+    private Integer status; // 正常/退号/已诊
 }

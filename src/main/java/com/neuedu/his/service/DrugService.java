@@ -1,49 +1,33 @@
 package com.neuedu.his.service;
 
-import com.neuedu.his.dto.DrugDispenseDTO;
-import com.neuedu.his.dto.DrugIssueRequest;
-import com.neuedu.his.dto.DrugReturnDTO;
-import com.neuedu.his.dto.DrugReturnRequest;
-import com.neuedu.his.entity.PrescriptionDetail;
-import com.neuedu.his.repository.PrescriptionRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.neuedu.his.entity.Drug;
+import com.neuedu.his.repository.DrugRepository;
+import jakarta.annotation.Resource;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DrugService {
 
-    @Autowired
-    private PrescriptionRepository prescriptionRepo;
+    @Resource
+    private DrugRepository drugRepository;
 
-    public List<DrugDispenseDTO> findUnissuedByMedicalId(Integer medicalId) {
-        return prescriptionRepo.findUnissuedByMedicalId(medicalId);
+    public Page<Drug> searchDrugs(String keyword, int page, int size) {
+        return drugRepository.findByDrugsNameContainingOrMnemonicCodeContaining(keyword, keyword, PageRequest.of(page, size));
     }
 
-    public void issueDrugs(DrugIssueRequest request) {
-        List<PrescriptionDetail> list = prescriptionRepo.findAllById(request.getPrescriptionIds());
-        for (PrescriptionDetail p : list) {
-            if (p.getIsIssued() == 0) {
-                p.setIsIssued(1); // 标记已发药
-            }
-        }
-        prescriptionRepo.saveAll(list);
-    }
-    public List<DrugReturnDTO> findIssuedByMedicalId(Integer medicalId) {
-        return prescriptionRepo.findIssuedByMedicalId(medicalId);
+    public Drug saveDrug(Drug drug) {
+        return drugRepository.save(drug);
     }
 
-    public void returnDrugs(DrugReturnRequest request) {
-        List<PrescriptionDetail> list = prescriptionRepo.findAllById(request.getPrescriptionIds());
-        for (PrescriptionDetail p : list) {
-            if (p.getIsIssued() == 1) {
-                p.setIsIssued(0); // 退药回滚为未发药
-            }
-        }
-        prescriptionRepo.saveAll(list);
+    public Optional<Drug> getDrugById(Long id) {
+        return drugRepository.findById(id);
     }
 
+    public void deleteDrug(Long id) {
+        drugRepository.deleteById(id);
+    }
 }
-
-
