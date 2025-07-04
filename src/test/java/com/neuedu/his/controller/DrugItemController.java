@@ -1,12 +1,10 @@
-package com.neuedu.his.controller;
+/*package com.neuedu.his.controller;
 
 import com.neuedu.his.entity.DrugItem;
 import com.neuedu.his.service.DrugItemService;
-import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 @RestController
 @RequestMapping("/api/drugs")
 public class DrugItemController {
@@ -47,3 +45,4 @@ public class DrugItemController {
         return drugItemService.searchByName(keyword);
     }
 }
+*/

@@ -1,5 +1,7 @@
 package com.neuedu.his.controller;
 
+import com.neuedu.his.po.Settlecategory;
+import com.neuedu.his.service.SettlecategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
