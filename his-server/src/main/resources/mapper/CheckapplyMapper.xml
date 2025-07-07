@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.his.mapper.CheckapplyMapper">
+
+    <resultMap id="BaseResultMap" type="com.neuedu.his.po.Checkapply">
+        <id property="id" column="ID"/>
+        <result property="medicalid" column="MedicalID"/>
+        <result property="registid" column="RegistID"/>
+        <result property="itemid" column="ItemID"/>
+        <result property="name" column="Name"/>
+        <result property="objective" column="Objective"/>
+        <result property="position" column="Position"/>
+        <result property="isurgent" column="IsUrgent"/>
+        <result property="num" column="Num"/>
+        <result property="creationtime" column="CreationTime"/>
+        <result property="doctorid" column="DoctorID"/>
+        <result property="checkoperid" column="CheckOperID"/>
+        <result property="resultoperid" column="ResultOperID"/>
+        <result property="checktime" column="CheckTime"/>
+        <result property="result" column="Result"/>
+        <result property="resulttime" column="ResultTime"/>
+        <result property="state" column="State"/>
+        <result property="recordtype" column="RecordType"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID
+        ,MedicalID,RegistID,ItemID,Name,Objective,
+        Position,IsUrgent,Num,CreationTime,DoctorID,
+        CheckOperID,ResultOperID,CheckTime,Result,ResultTime,
+        State,RecordType
+    </sql>
+
+    <select id="getinfoByMedicalID" resultType="map" parameterType="int">
+        select c.*,f.Price from checkapply c,fmeditem f
+        where c.ItemID = f.id and  c.MedicalID= #{id}
+    </select>
+</mapper>

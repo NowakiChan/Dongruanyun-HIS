@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.his.mapper.HerbaltemplateMapper">
+
+    <resultMap id="BaseResultMap" type="com.neuedu.his.po.Herbaltemplate">
+        <id property="id" column="ID"/>
+        <result property="name" column="Name"/>
+        <result property="doctorid" column="DoctorID"/>
+        <result property="creationtime" column="CreationTime"/>
+        <result property="prescriptiotype" column="PrescriptioType"/>
+        <result property="paynumber" column="PayNumber"/>
+        <result property="drugsusage" column="DrugsUsage"/>
+        <result property="therapy" column="Therapy"/>
+        <result property="detailed" column="Detailed"/>
+        <result property="advice" column="Advice"/>
+        <result property="scope" column="Scope"/>
+        <result property="delmark" column="DelMark"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID
+        ,Name,DoctorID,CreationTime,PrescriptioType,PayNumber,
+        DrugsUsage,Therapy,Detailed,Advice,Scope,
+        DelMark
+    </sql>
+</mapper>

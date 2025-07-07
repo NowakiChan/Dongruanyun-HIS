@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.his.mapper.SchedulingMapper">
+
+    <resultMap id="BaseResultMap" type="com.neuedu.his.po.Scheduling">
+        <id property="id" column="ID"/>
+        <result property="scheddate" column="SchedDate"/>
+        <result property="deptid" column="DeptID"/>
+        <result property="userid" column="UserID"/>
+        <result property="noon" column="Noon"/>
+        <result property="ruleid" column="RuleID"/>
+        <result property="delmark" column="DelMark"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID
+        ,SchedDate,DeptID,UserID,Noon,RuleID,
+        DelMark
+    </sql>
+</mapper>

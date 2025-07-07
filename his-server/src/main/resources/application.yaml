@@ -1,0 +1,12 @@
+spring:
+  # 数据源配置信息
+  datasource:
+    url: jdbc:mysql://localhost:3306/Mybatisplus
+    username: Mybatisplus
+    password: Mybatisplus
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  configuration:
+    # ??????
+    map-underscore-to-camel-case: false

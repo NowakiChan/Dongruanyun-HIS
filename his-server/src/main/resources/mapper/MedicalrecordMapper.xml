@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.his.mapper.MedicalrecordMapper">
+
+    <resultMap id="BaseResultMap" type="com.neuedu.his.po.Medicalrecord">
+        <id property="id" column="ID"/>
+        <result property="casenumber" column="CaseNumber"/>
+        <result property="registid" column="RegistID"/>
+        <result property="readme" column="Readme"/>
+        <result property="present" column="Present"/>
+        <result property="presenttreat" column="PresentTreat"/>
+        <result property="history" column="History"/>
+        <result property="allergy" column="Allergy"/>
+        <result property="physique" column="Physique"/>
+        <result property="proposal" column="Proposal"/>
+        <result property="careful" column="Careful"/>
+        <result property="checkresult" column="CheckResult"/>
+        <result property="diagnosis" column="Diagnosis"/>
+        <result property="handling" column="Handling"/>
+        <result property="casestate" column="CaseState"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID
+        ,CaseNumber,RegistID,Readme,Present,PresentTreat,
+        History,Allergy,Physique,Proposal,Careful,
+        CheckResult,Diagnosis,Handling,CaseState
+    </sql>
+</mapper>

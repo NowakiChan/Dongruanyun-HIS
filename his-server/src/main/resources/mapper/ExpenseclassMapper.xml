@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.his.mapper.ExpenseclassMapper">
+
+    <resultMap id="BaseResultMap" type="com.neuedu.his.po.Expenseclass">
+        <id property="id" column="ID"/>
+        <result property="expcode" column="ExpCode"/>
+        <result property="expname" column="ExpName"/>
+        <result property="delmark" column="DelMark"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID
+        ,ExpCode,ExpName,DelMark
+    </sql>
+</mapper>

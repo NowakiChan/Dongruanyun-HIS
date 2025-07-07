@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.his.mapper.PrescriptionMapper">
+
+    <resultMap id="BaseResultMap" type="com.neuedu.his.po.Prescription">
+        <id property="id" column="ID"/>
+        <result property="medicalid" column="MedicalID"/>
+        <result property="registid" column="RegistID"/>
+        <result property="userid" column="UserID"/>
+        <result property="prescriptionname" column="PrescriptionName"/>
+        <result property="prescriptiontime" column="PrescriptionTime"/>
+        <result property="prescriptionstate" column="PrescriptionState"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID
+        ,MedicalID,RegistID,UserID,PrescriptionName,PrescriptionTime,
+        PrescriptionState
+    </sql>
+</mapper>

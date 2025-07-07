@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.his.mapper.RegisterMapper">
+
+    <resultMap id="BaseResultMap" type="com.neuedu.his.po.Register">
+        <id property="id" column="ID"/>
+        <result property="casenumber" column="CaseNumber"/>
+        <result property="realname" column="RealName"/>
+        <result property="gender" column="Gender"/>
+        <result property="idnumber" column="IDnumber"/>
+        <result property="birthdate" column="BirthDate"/>
+        <result property="age" column="Age"/>
+        <result property="agetype" column="AgeType"/>
+        <result property="homeaddress" column="HomeAddress"/>
+        <result property="visitdate" column="VisitDate"/>
+        <result property="noon" column="Noon"/>
+        <result property="deptid" column="DeptID"/>
+        <result property="userid" column="UserID"/>
+        <result property="registleid" column="RegistLeID"/>
+        <result property="settleid" column="SettleID"/>
+        <result property="isbook" column="IsBook"/>
+        <result property="registtime" column="RegistTime"/>
+        <result property="registerid" column="RegisterID"/>
+        <result property="visitstate" column="VisitState"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID
+        ,CaseNumber,RealName,Gender,IDnumber,BirthDate,
+        Age,AgeType,HomeAddress,VisitDate,Noon,
+        DeptID,UserID,RegistLeID,SettleID,IsBook,
+        RegistTime,RegisterID,VisitState
+    </sql>
+</mapper>
