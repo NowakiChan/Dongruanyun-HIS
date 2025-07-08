@@ -13,6 +13,11 @@ const router = createRouter({
       children:[
          // http://localhost:5173/user
         {
+          path:'/check',
+          name: 'check',
+          component: ()=> import('../views/check/index.vue')
+        },
+        {
           path:'/user',
           name: 'user',
           component: ()=> import('../views/user/index.vue'),
